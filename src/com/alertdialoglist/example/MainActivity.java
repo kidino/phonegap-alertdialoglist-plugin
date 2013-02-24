@@ -17,20 +17,18 @@
        under the License.
  */
 
-package org.apache.cordova.example;
+package com.alertdialoglist.example;
 
-import android.app.Activity;
 import android.os.Bundle;
 import org.apache.cordova.*;
 
-public class cordovaExample extends DroidGap
+public class MainActivity extends DroidGap
 {
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        //super.loadUrl("file:///android_asset/www/drag-match/index.html");
-        super.loadUrl("file:///android_asset/www/drag-match/list_sample.html");
+        super.loadUrl("file:///android_asset/www/list_sample.html");
     }
 }
 
