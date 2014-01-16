@@ -17,18 +17,21 @@
        under the License.
  */
 
-package com.alertdialoglist.example;
+package com.phonegap.helloworld;
 
 import android.os.Bundle;
 import org.apache.cordova.*;
 
-public class MainActivity extends DroidGap
+public class HelloWorld extends CordovaActivity 
 {
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        super.loadUrl("file:///android_asset/www/list_sample.html");
+        super.init();
+        // Set by <content src="index.html" /> in config.xml
+        super.loadUrl(Config.getStartUrl());
+        //super.loadUrl("file:///android_asset/www/index.html")
     }
 }
 

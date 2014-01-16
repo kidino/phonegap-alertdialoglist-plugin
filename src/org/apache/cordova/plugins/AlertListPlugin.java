@@ -28,11 +28,10 @@ import org.json.JSONException;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 
-import org.apache.cordova.api.CallbackContext;
-import org.apache.cordova.api.CordovaInterface;
-import org.apache.cordova.api.CordovaPlugin;
-import org.apache.cordova.api.PluginResult;
-
+import org.apache.cordova.CordovaPlugin;
+import org.apache.cordova.CallbackContext;
+import org.apache.cordova.CordovaInterface;
+import org.apache.cordova.PluginResult;
 /**
  * This class provides a service.
  */
@@ -66,7 +65,7 @@ public class AlertListPlugin extends CordovaPlugin {
     // LOCAL METHODS
     // --------------------------------------------------------------------------
     
-    public void loadList(final JSONArray thelist, final CallbackContext callbackContext) {
+    public void loadList( final JSONArray thelist,  final CallbackContext callbackContext) {
     
         final CordovaInterface cordova = this.cordova;
     	
@@ -100,7 +99,9 @@ public class AlertListPlugin extends CordovaPlugin {
 		    	    	dialog.dismiss();
 						// we +1 to item because item starts from 0, but from
 						// thelist[0], that was the title...
-                        callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, item + 1));                        
+                        callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, item + 1));
+                        //callbackContext.sendPluginResult(pluginResult)
+                        
 		    	    }
 		    	});
 		    	AlertDialog alert = builder.create();
